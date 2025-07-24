@@ -1,4 +1,4 @@
-# 👾 Projeto Stranger Things
+# 👾 Pratigando
 
 Este projeto foi criado com o objetivo de praticar desenvolvimento web usando **HTML** e **CSS**, com uma temática inspirada na série *Stranger Things*.
 
