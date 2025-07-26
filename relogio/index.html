@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relógio de Foco</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body data-theme="dark">
+
+    <main id="app-content">
+        <div class="top-controls">
+            <button class="has-tooltip" id="settingsBtn" data-tooltip="Configurações"><i class="fas fa-cog"></i></button>
+            <button class="has-tooltip" id="fullscreenBtn" data-tooltip="Tela Cheia"><i class="fas fa-expand"></i></button>
+        </div>
+
+        <div class="timer-container">
+            <div class="clock-viewport">
+                <div class="clock-display active-clock" id="timer-display">
+                    <div class="clock-numbers">
+                        <span id="hours">00</span><span>:</span><span id="minutes">25</span><span>:</span><span id="seconds">00</span>
+                    </div>
+                    <p class="clock-label">Timer de Foco</p>
+                </div>
+                <div class="clock-display" id="real-time-display">
+                    <div class="clock-numbers">
+                        <span id="real-time-hours">00</span><span>:</span><span id="real-time-minutes">00</span><span>:</span><span id="real-time-seconds">00</span>
+                    </div>
+                    <p class="clock-label">Horário de Brasília</p>
+                </div>
+            </div>
+
+            <div class="controls">
+                <button class="has-tooltip" id="startBtn" data-tooltip="Iniciar"><i class="fas fa-play"></i></button>
+                <button class="has-tooltip" id="pauseBtn" data-tooltip="Pausar"><i class="fas fa-pause"></i></button>
+                <button class="has-tooltip" id="resetBtn" data-tooltip="Resetar"><i class="fas fa-rotate-right"></i></button>
+                <button class="has-tooltip" id="toggleClockBtn" data-tooltip="Alternar Relógio"><i class="fas fa-arrows-rotate"></i></button>
+            </div>
+        </div>
+
+        <div class="dynamic-widget">
+            <div class="widget-content" id="widget-real-time">
+                <span id="widget-real-time-time"></span>
+                <p>Horário de Brasília</p>
+            </div>
+            <div class="widget-content hidden" id="widget-timer">
+                <span id="widget-timer-time">00:25:00</span>
+                <p>Timer de Foco</p>
+            </div>
+        </div>
+    </main>
+
+    <div id="settingsModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>Configurações</h2>
+            <div class="setting-section" id="presets-section">
+                <h4>Meus Cronômetros</h4>
+                <ul id="presets-list"></ul>
+                <button id="show-preset-form-btn">+ Adicionar Novo</button>
+                <form id="preset-form" class="hidden">
+                    <input type="hidden" id="preset-id">
+                    <input type="text" id="preset-name" placeholder="Nome (ex: Estudo)">
+                    <div class="input-group">
+                        <div><label for="preset-hours">H</label><input type="number" id="preset-hours" min="0" value="0"></div>
+                        <div><label for="preset-minutes">M</label><input type="number" id="preset-minutes" min="0" max="59" value="25"></div>
+                    </div>
+                    <button type="submit" id="save-preset-btn">Salvar</button>
+                    <button type="button" id="cancel-preset-btn">Cancelar</button>
+                </form>
+            </div>
+            <div class="setting-section">
+                <h4>Tema Visual</h4>
+                <div class="theme-options">
+                    <label><input type="radio" name="theme" value="dark"> Escuro</label>
+                    <label><input type="radio" name="theme" value="light"> Claro</label>
+                    <label><input type="radio" name="theme" value="yellow"> Bege</label>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div id="custom-tooltip"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
