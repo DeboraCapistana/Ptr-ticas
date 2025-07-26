@@ -23,5 +23,27 @@ Este é um relógio digital desenvolvido com HTML, CSS e JavaScript. Além de ex
 
 1. Clone este repositório:
 
-```bash
-git clone https://github.com/DeboraCapistana/relogio-digital.git
+bash
+git clone https://github.com/DeboraCapistana/relogio.git
+
+
+2. Acesse a pasta do projeto
+
+cd relogio-digital
+
+
+3. Abra no navegador
+
+Dê dois cliques no arquivo index.html ou, se preferir, use uma extensão no VS Code como "Live Server".
+
+
+📌 Observações
+A funcionalidade de modo tela cheia está em desenvolvimento.
+
+Os cronômetros salvos são armazenados localmente no navegador, então ficam disponíveis mesmo após fechar a aba.
+
+📄 Licença
+Este projeto está licenciado sob a MIT License.
+Sinta-se à vontade para usar, modificar e compartilhar com créditos.
+
+Feito com 💙 por Débora Capistana
